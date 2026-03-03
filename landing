@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Ltd Dashboard - Updated</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-800 pb-20">
+
+    <!-- Header Navigation -->
+    <nav class="bg-white border-b border-slate-200 px-6 py-3 flex justify-between items-center sticky top-0 z-50">
+        <div class="text-[11px] font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-md tracking-tight uppercase">
+            Reg D Rule 506(c)
+        </div>
+        <div class="flex items-center gap-3">
+            <button class="text-blue-600 border border-blue-600 px-5 py-1.5 rounded-full text-xs font-semibold hover:bg-blue-50 transition">Chat</button>
+            <button class="text-blue-600 border border-blue-600 px-5 py-1.5 rounded-full text-xs font-semibold hover:bg-blue-50 transition flex items-center gap-2">
+                <i class="fas fa-share-nodes"></i> Share Deal
+            </button>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Main Content Area (8 Columns) -->
+        <div class="lg:col-span-8 space-y-6">
+            
+            <!-- Welcome Hero -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm flex flex-col md:flex-row gap-8 items-start">
+                <div class="flex-1">
+                    <h1 class="text-2xl font-bold text-slate-900 mb-3">Welcome to <span class="text-blue-600">ABC Ltd</span></h1>
+                    <p class="text-[13px] text-slate-500 leading-relaxed mb-6">
+                        Azima Health is redefining cancer diagnostics with a rapid, low-cost blood test for multi-cancer detection and recurrence monitoring. Our patent-pending tech delivers same-day results at one-tenth the cost, detecting cancers with 96% sensitivity and 94% specificity as early as stage I.
+                    </p>
+                    <button class="bg-blue-600 text-white px-5 py-2 rounded-lg text-xs font-bold hover:bg-blue-700 shadow-sm shadow-blue-200 transition">
+                        Edit Information
+                    </button>
+                </div>
+                <div class="w-full md:w-56 h-36 bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
+                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover grayscale-[20%]" />
+                </div>
+            </div>
+
+            <!-- NEW About Section (Requested) -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+                <div class="px-6 py-4 flex justify-between items-center border-b border-slate-100 bg-slate-50/50">
+                    <h2 class="font-bold text-slate-800 text-sm">About</h2>
+                    <button class="text-blue-500 text-[11px] font-bold hover:underline">Edit <i class="fas fa-pencil ml-1 text-[9px]"></i></button>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+                    <div>
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mb-1">Founded Year</p>
+                        <p class="text-[13px] font-bold text-slate-800">2021</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mb-1">Location</p>
+                        <p class="text-[13px] font-bold text-slate-800">San Francisco, CA</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mb-1">Website</p>
+                        <a href="#" class="text-[13px] font-bold text-blue-600 hover:text-blue-700 underline decoration-blue-200 underline-offset-4">www.abcltd.com</a>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mb-1">Employee Count</p>
+                        <p class="text-[13px] font-bold text-slate-800">11 - 50</p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mb-1">Linked In</p>
+                        <a href="#" class="text-[13px] font-bold text-blue-600 flex items-center gap-1.5 hover:text-blue-700 group">
+                            <i class="fab fa-linkedin text-[16px] text-[#0A66C2]"></i> 
+                            <span class="group-hover:underline decoration-blue-200 underline-offset-4">linkedin.com/company/abc-ltd</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Capital Raise Overview -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+                <div class="px-6 py-4 flex justify-between items-center border-b border-slate-100">
+                    <h2 class="font-bold text-slate-800 text-sm">Capital Raise Overview</h2>
+                    <button class="text-blue-500 text-[11px] font-bold">Edit <i class="fas fa-pencil ml-1 text-[9px]"></i></button>
+                </div>
+                <div class="p-6 grid grid-cols-2 gap-y-6">
+                    <div>
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Funding Goal</p>
+                        <p class="text-[13px] font-bold text-slate-800">$1.25M</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Funding Instrument</p>
+                        <p class="text-[13px] font-bold text-slate-800">SAFE (Note)</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Valuation Cap</p>
+                        <p class="text-[13px] font-bold text-slate-800">$12.5M</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Discount Rate</p>
+                        <p class="text-[13px] font-bold text-slate-800">20%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-4 space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm sticky top-24">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-tight">Current Funding<br>Round:</h3>
+                    <span class="text-[11px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">Pre-Seed</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-y-6 gap-x-4 mb-8">
+                    <div>
+                        <p class="text-[9px] font-bold text-slate-400 uppercase">Funding Goal</p>
+                        <p class="text-sm font-bold text-slate-800">$1.25M</p>
+                    </div>
+                    <div>
+                        <p class="text-[9px] font-bold text-slate-400 uppercase">Interest Indicated</p>
+                        <p class="text-sm font-bold text-slate-800">$100K</p>
+                    </div>
+                    <div>
+                        <p class="text-[9px] font-bold text-blue-500 uppercase">Amount Funded</p>
+                        <p class="text-sm font-bold text-blue-600">$2.50M</p>
+                    </div>
+                    <div>
+                        <p class="text-[9px] font-bold text-slate-400 uppercase">Min. Investment</p>
+                        <p class="text-sm font-bold text-slate-800">$250K</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-blue-600 text-white py-2 rounded-lg text-[11px] font-bold shadow-md shadow-blue-100">Upload Docs</button>
+                        <button class="flex-1 border border-blue-600 text-blue-600 py-2 rounded-lg text-[11px] font-bold">Edit</button>
+                    </div>
+                    <button class="w-full border border-blue-200 text-blue-600 py-2 rounded-lg text-[11px] font-bold hover:bg-blue-50 transition">Deal Deck</button>
+                    <button class="w-full border border-blue-200 text-blue-600 py-2 rounded-lg text-[11px] font-bold hover:bg-blue-50 transition">Data Room</button>
+                    <button class="w-full border border-blue-200 text-blue-600 py-2 rounded-lg text-[11px] font-bold flex items-center justify-center gap-2 hover:bg-blue-50 transition">
+                        <i class="far fa-clock"></i> View Engagement Statistics
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
