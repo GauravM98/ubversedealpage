@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ABC Ltd - Investment Dashboard</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Font Awesome for Icons (using CDN for common icons like search, chat, etc.) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style data-purpose="custom-colors">
+    :root {
+      --primary-blue: #2563EB;
+      --light-blue-bg: #F8FAFC;
+      --border-gray: #E2E8F0;
+    }
+    .text-primary { color: var(--primary-blue); }
+    .bg-primary { background-color: var(--primary-blue); }
+    .border-primary { border-color: var(--primary-blue); }
+  </style>
+<style data-purpose="layout-tweaks">
+    body {
+      background-color: #F3F4F6;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    .card {
+      background: white;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-gray);
+      padding: 1.5rem;
+    }
+    .progress-ring-circle {
+      transition: stroke-dashoffset 0.35s;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+  </style>
+</head>
+<body class="text-slate-800">
+<!-- BEGIN: MainHeader -->
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<!-- Logo and Nav Links -->
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2" data-purpose="logo">
+<div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">U</div>
+<span class="text-xl font-bold tracking-tight">UnBound X</span>
+</div>
+<nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
+<a class="hover:text-blue-600" href="#">Dashboard</a>
+<a class="hover:text-blue-600" href="#">Deals</a>
+<a class="hover:text-blue-600 border-b-2 border-blue-600 text-blue-600 pb-1" href="#">Investors</a>
+<a class="hover:text-blue-600" href="#">Reports</a>
+</nav>
+</div>
+<!-- Search and Actions -->
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+<i class="fas fa-search"></i>
+</span>
+<input class="block w-64 pl-10 pr-3 py-1.5 border border-gray-300 rounded-full text-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs bg-blue-50 text-blue-600 px-3 py-1 rounded-full border border-blue-100 font-semibold">Reg D Rule 506(c)</span>
+<button class="p-2 text-blue-600 hover:bg-blue-50 rounded-full border border-blue-200">
+<i class="far fa-comment-dots text-lg"></i>
+</button>
+<button class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-blue-700">
+<i class="fas fa-share-nodes"></i> Share Deal
+            </button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- BEGIN: HeroSection -->
+<section class="mb-8" data-purpose="hero-section">
+<div class="card overflow-hidden !p-0">
+<div class="grid md:grid-cols-2">
+<div class="p-8 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Verified Issuer</span>
+<i class="fas fa-check-circle text-blue-500 text-xs"></i>
+</div>
+<h1 class="text-3xl font-bold mb-4">Welcome to <span class="text-blue-600">ABC Ltd</span></h1>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Azima Health is redefining cancer diagnostics with a rapid, low-cost blood test for multi-cancer detection and recurrence monitoring. Our patent-pending tech delivers same-day results at one-tenth the cost, detecting cancers with 90% sensitivity and 94% specificity as early as stage I. Our benchtop system allows labs to perform advanced cancer testing without centralized workflows. We are launching with colorectal cancer recurrence monitoring, with plans to expand to pan-cancer applications.
+            </p>
+<div class="flex gap-3">
+<button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold text-sm hover:bg-blue-700 transition">Edit Information</button>
+<button class="border border-blue-600 text-blue-600 px-6 py-2 rounded-lg font-semibold text-sm hover:bg-blue-50 transition">View Public Page</button>
+</div>
+</div>
+<div class="h-64 md:h-full min-h-[300px] relative">
+<!-- Image placeholder based on description: City skyline through windows -->
+<img alt="Corporate Office View" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt27CvV5Fbs7RfmgPeL5CDKCSpYo_smZbiY4RIoKuJ4zExBaXFhxtN932Pja35MKQaCx_etvJAiqhZLBVT5JF2lrg6cvzfaClTVQ3exsVxEr0Mj0k_OqAYeME9DV2qM2ZV2YMMAbgwGmsPvGITlkl67DXC4v9ff_B8DSGcq7gzIN-LfJVAg0It6NPdUg0e5FIIkom9t26bQXeOi-yE2btad0p2Pih6em84rvthQARzQctSVKXkwxN7Ceh3Czg1qFvJfA3vz2j8vdXb"/>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- BEGIN: LeftColumn -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Profile Completion -->
+<div class="card" data-purpose="profile-completion">
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full" viewbox="0 0 100 100">
+<circle class="text-slate-100" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-blue-600" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="125.6" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-bold">50%</span>
+<span class="text-[10px] text-slate-500 font-medium">Completed</span>
+</div>
+</div>
+<div class="flex-1 w-full">
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full border border-gray-300 flex-shrink-0 mt-0.5"></div>
+<div class="flex-1">
+<p class="text-sm font-semibold">Review &amp; Complete Deal Information</p>
+<a class="text-xs text-blue-600 hover:underline" href="#">Complete Now <i class="fas fa-external-link-alt text-[10px]"></i></a>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full border border-gray-300 flex-shrink-0 mt-0.5"></div>
+<div class="flex-1">
+<p class="text-sm font-semibold">Upload Offering Documents</p>
+<a class="text-xs text-blue-600 hover:underline" href="#">Complete Now <i class="fas fa-external-link-alt text-[10px]"></i></a>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+<i class="fas fa-check text-white text-[10px]"></i>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold">Ensure Your Deal Deck is Up-To-Date</p>
+<span class="text-xs text-green-600">Completed</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full border border-gray-300 flex-shrink-0 mt-0.5"></div>
+<div class="flex-1">
+<p class="text-sm font-semibold">Set Up Data Room</p>
+<a class="text-xs text-blue-600 hover:underline" href="#">Complete Now <i class="fas fa-external-link-alt text-[10px]"></i></a>
+</div>
+</div>
+</div>
+<button class="mt-6 w-full md:w-auto bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-semibold">Request Listing</button>
+</div>
+</div>
+</div>
+<!-- Capital Raise Overview -->
+<div class="card" data-purpose="capital-raise-overview">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold">Capital Raise Overview</h3>
+<button class="text-blue-600 text-sm font-medium hover:underline">Edit <i class="far fa-edit"></i></button>
+</div>
+<div class="grid grid-cols-2 gap-y-6">
+<div>
+<p class="text-xs text-slate-500 uppercase font-semibold">Funding Goal</p>
+<p class="text-sm font-bold">$1.25M</p>
+</div>
+<div>
+<p class="text-xs text-slate-500 uppercase font-semibold">Funding Instrument</p>
+<p class="text-sm font-bold">SAFE (Note)</p>
+</div>
+<div>
+<p class="text-xs text-slate-500 uppercase font-semibold">Valuation Cap (optional)</p>
+<p class="text-sm font-bold">$12.5M</p>
+</div>
+<div>
+<p class="text-xs text-slate-500 uppercase font-semibold">Discount Rate (optional)</p>
+<p class="text-sm font-bold">20%</p>
+</div>
+</div>
+</div>
+<!-- Investors Section -->
+<div class="card" data-purpose="investors-section">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold">Investors</h3>
+<button class="text-blue-600 text-sm font-medium hover:underline">Edit <i class="far fa-edit"></i></button>
+</div>
+<div class="grid grid-cols-2 gap-y-6">
+<div>
+<p class="text-xs text-slate-500 uppercase font-semibold">Total</p>
+<p class="text-sm font-bold">8</p>
+</div>
+<div>
+<p class="text-xs text-slate-500 uppercase font-semibold">New This Round</p>
+<p class="text-sm font-bold">2</p>
+</div>
+<div>
+<p class="text-xs text-slate-500 uppercase font-semibold">Lead Investor</p>
+<p class="text-sm font-bold">Y Combinator</p>
+</div>
+<div>
+<p class="text-xs text-slate-500 uppercase font-semibold">Average Check Size</p>
+<p class="text-sm font-bold">$100K</p>
+</div>
+<div class="col-span-2">
+<p class="text-xs text-slate-500 uppercase font-semibold">Accredited Investor</p>
+<p class="text-sm font-bold">dfsc</p>
+</div>
+</div>
+</div>
+<!-- About Section -->
+<div class="card" data-purpose="about-section">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold">About</h3>
+<button class="text-blue-600 text-sm font-medium hover:underline">Edit <i class="far fa-edit"></i></button>
+</div>
+<div class="grid grid-cols-2 mb-8">
+<div>
+<p class="text-xs text-slate-500 uppercase font-semibold">Legal Offeror</p>
+<p class="text-sm font-bold">Harvey Specter</p>
+</div>
+<div>
+<p class="text-xs text-slate-500 uppercase font-semibold">Law Firm</p>
+<p class="text-sm font-bold">Pearson Specter</p>
+</div>
+</div>
+<article class="prose prose-sm max-w-none text-slate-600">
+<h4 class="text-blue-600 font-bold text-lg mb-2">What is ABC Ltd?</h4>
+<p class="mb-4">The two teamed up with Craig Packer, a Goldman Sachs Group Inc. veteran, to launch direct lender Owl Rock Capital in 2016 — just as private credit began its explosive growth. In 2021, the firm created what is now Blue Owl by merging with Dyal Capital Partners, a specialist in taking stakes in alternative asset managers.</p>
+<p class="mb-4">Since the Dyal merger, the firm has more than tripled its assets under management through a mix of strong fundraising and acquisitions of specialists such as Kuvare Asset Management and real estate lender Prima Capital Advisors. The rapid growth continued last year, with the firm raising more than $1.25 billion for one of the biggest so-called interval funds, which are tailored to individual investors. By the end of 2023, Blue Owl managed more than $160 billion.</p>
+<p class="mb-6 font-semibold">Blue Owl Has Ridden Private Credit Wave to Massive Growth<br/>The firm's assets under management have tripled in the past 4 years</p>
+</article>
+<div class="rounded-xl overflow-hidden mb-8">
+<img alt="About ABC Ltd Visual" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoHj8OZQr3hbaKaZnxg3aNLjXDqJwRU2f4EmeCDTSLVA7CCpPtdvbUpFsDHTjOWnGk4zYEck4Ui3dnTzqlyeco5U159bjmOrACIWOxNlqoD5oBSq8Ta78ejb2vY90ndnVn68lgmnNs3zPB7EZXLymvvWZh5TCyN9_VAmG3sGDsfOnOy_EmmGFHyDjg9YJM8Py7i_SrdiyhknB1EyGHYbW3MVOzx7eZpiAWJOB8xhZS1NXwEbhdbFfEK4cAkd5Y-ydnI1phfy97tru2"/>
+</div>
+<div data-purpose="categories">
+<h4 class="text-blue-600 font-bold mb-3">Categories:</h4>
+<span class="inline-block bg-slate-100 text-slate-700 px-4 py-1.5 rounded-full text-xs font-semibold">MedTech</span>
+</div>
+</div>
+</div>
+<!-- END: LeftColumn -->
+<!-- BEGIN: RightSidebar -->
+<aside class="space-y-6">
+<!-- Funding Round Card -->
+<div class="card border-blue-100 shadow-sm" data-purpose="funding-round-card">
+<div class="flex justify-between items-center mb-6">
+<span class="text-xs font-bold text-slate-500 uppercase">Current Funding Round:</span>
+<span class="text-xs font-bold text-blue-600 uppercase">Pre-Seed</span>
+</div>
+<div class="space-y-4 mb-6">
+<div class="flex justify-between">
+<div>
+<p class="text-[10px] text-slate-500 uppercase">Funding Goal</p>
+<p class="text-sm font-bold">$1.25M</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 uppercase">Interest Indicated</p>
+<p class="text-sm font-bold">$100K</p>
+</div>
+</div>
+<div class="flex justify-between">
+<div>
+<p class="text-[10px] text-slate-500 uppercase">Amount Funded</p>
+<p class="text-sm font-bold">$2.50M</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 uppercase">Min. Investment</p>
+<p class="text-sm font-bold">$250K</p>
+</div>
+</div>
+<div class="flex justify-between border-t border-slate-100 pt-4">
+<div>
+<p class="text-[10px] text-slate-500 uppercase">Indicated</p>
+<p class="text-sm font-bold">$2M</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 uppercase">Funded</p>
+<p class="text-sm font-bold">$2.50M</p>
+</div>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 uppercase">Committed</p>
+<p class="text-sm font-bold">$2M</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-blue-600 text-white py-2 rounded-lg text-xs font-bold hover:bg-blue-700">Upload Docs</button>
+<button class="border border-blue-600 text-blue-600 py-2 rounded-lg text-xs font-bold hover:bg-blue-50">Edit</button>
+</div>
+</div>
+<!-- Resources Section -->
+<div class="space-y-3" data-purpose="resources">
+<a class="block w-full text-center border border-blue-600 text-blue-600 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-50" href="#">Deal Deck</a>
+<a class="block w-full text-center border border-blue-600 text-blue-600 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-50" href="#">Data Room</a>
+<a class="block w-full text-center border border-blue-600 text-blue-600 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-50 flex items-center justify-center gap-2" href="#">
+<i class="far fa-clock"></i> View Engagement Statistics
+          </a>
+</div>
+<!-- Assistance Card -->
+<div class="card bg-slate-50 border-dashed border-2 border-slate-200" data-purpose="assistance-card">
+<h4 class="font-bold text-center mb-2">Need assistance?</h4>
+<p class="text-xs text-slate-500 text-center mb-4 leading-relaxed">Our team is here to help you navigate your capital raise journey.</p>
+<button class="w-full bg-slate-800 text-white py-2.5 rounded-lg text-sm font-bold hover:bg-slate-900 transition">Contact Support</button>
+</div>
+</aside>
+<!-- END: RightSidebar -->
+</div>
+</main>
+<!-- BEGIN: Footer -->
+<footer class="bg-white border-t border-gray-200 mt-16 py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-12">
+<!-- Brand Info -->
+<div class="lg:col-span-2">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">U</div>
+<span class="text-xl font-bold tracking-tight">UnBound X</span>
+</div>
+<p class="text-slate-500 text-sm max-w-xs leading-relaxed">
+            Shaping the future of finance, together. Empowering issuers and investors through technology.
+          </p>
+<div class="mt-6 flex gap-4">
+<a class="text-blue-600 hover:text-blue-800" href="#"><i class="fab fa-linkedin-in text-lg"></i></a>
+<a class="text-blue-600 hover:text-blue-800" href="#"><i class="fab fa-twitter text-lg"></i></a>
+<a class="text-blue-600 hover:text-blue-800" href="#"><i class="fab fa-facebook-f text-lg"></i></a>
+<a class="text-blue-600 hover:text-blue-800" href="#"><i class="fab fa-instagram text-lg"></i></a>
+</div>
+</div>
+<!-- Links Column 1 -->
+<div>
+<h5 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Contact Us</h5>
+<ul class="space-y-4 text-sm font-medium">
+<li><a class="text-slate-600 hover:text-blue-600" href="#">Pricing</a></li>
+<li><a class="text-slate-600 hover:text-blue-600" href="#">Terms of Use</a></li>
+<li><a class="text-slate-600 hover:text-blue-600" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-600 hover:text-blue-600" href="#">Disclaimer</a></li>
+<li><a class="text-slate-600 hover:text-blue-600" href="#">Form CRS</a></li>
+<li><a class="text-slate-600 hover:text-blue-600" href="#">Reg. BI Disclosure</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div class="lg:col-span-2">
+<h5 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Useful Links</h5>
+<ul class="space-y-4 text-sm">
+<li class="flex items-center gap-3">
+<i class="fas fa-globe text-blue-600"></i>
+<a class="text-blue-600 hover:underline" href="#">www.unboundxinc.com</a>
+</li>
+<li class="flex items-center gap-3">
+<i class="far fa-envelope text-blue-600"></i>
+<a class="text-blue-600 hover:underline" href="mailto:info@unboundxinc.com">info@unboundxinc.com</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 font-medium">
+<p>Copyright @2025 <a class="text-blue-600 hover:underline" href="#">UnBound X</a></p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-blue-600" href="#">Terms</a>
+<a class="hover:text-blue-600" href="#">Privacy</a>
+<a class="hover:text-blue-600" href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>
