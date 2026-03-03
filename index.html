@@ -3,10 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>ABC Ltd Dashboard</title>
 </head>
-<body>
-    <h1>Welcome to ABC Ltd Dashboard</h1>
-    <p>Here you can find the latest updates and information about our company.</p>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow">
+        <div class="container mx-auto px-4 py-3">
+            <h1 class="text-xl font-bold">ABC Ltd</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="text-blue-500">Home</a></li>
+                <li><a href="#" class="text-blue-500">About</a></li>
+                <li><a href="#" class="text-blue-500">Funding Details</a></li>
+                <li><a href="#" class="text-blue-500">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="bg-blue-600 text-white py-20 text-center">
+        <h2 class="text-3xl font-semibold">Welcome to the ABC Ltd Dashboard</h2>
+        <p class="mt-4">Your overview of capital raise and funding details.</p>
+    </header>
+    <section class="container mx-auto px-4 py-10">
+        <h3 class="text-2xl font-semibold">About Us</h3>
+        <p class="mt-2">ABC Ltd is dedicated to helping you understand your funding options.</p>
+        <h3 class="text-2xl font-semibold mt-10">Capital Raise Overview</h3>
+        <p>Here you will find a comprehensive overview of our capital raise opportunities.</p>
+    </section>
+    <aside class="fixed right-0 top-20 w-64 bg-white shadow-lg p-4">
+        <h4 class="font-semibold">Funding Details</h4>
+        <ul class="mt-2">
+            <li>Funding Option 1</li>
+            <li>Funding Option 2</li>
+            <li>Funding Option 3</li>
+        </ul>
+    </aside>
+    <footer class="bg-gray-800 text-white text-center py-4 mt-10">
+        <p>&copy; 2026 ABC Ltd. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
